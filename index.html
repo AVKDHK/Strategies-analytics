@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAE Systems Inc. - Strategic Analytics & Decision Support Suite</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#0a0f1d',
+              900: '#131c31',
+              800: '#1b2744'
+            },
+            cyan: {
+              400: '#00b4d8',
+              500: '#0077b6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#0a0f1d] text-slate-100 min-h-screen flex flex-col">
+
+  <!-- Main Layout Container -->
+  <div class="flex flex-col lg:flex-row min-h-screen">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="w-full lg:w-72 bg-[#131c31] border-b lg:border-b-0 lg:border-r border-slate-800 p-5 flex flex-col justify-between shrink-0">
+      <div>
+        <!-- Brand Header -->
+        <div class="flex items-center gap-3 mb-8 pb-4 border-b border-slate-800">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-white font-mono shadow-lg shadow-cyan-500/20">
+            BAE
+          </div>
+          <div>
+            <h1 class="text-sm font-extrabold text-white tracking-wide">BAE SYSTEMS INC.</h1>
+            <span class="text-[10px] font-mono text-cyan-400 block uppercase">Strategic Analytics Suite</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="space-y-1.5 font-sans">
+          <a data-tab="executive" class="nav-link active">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            <span>Command Center</span>
+          </a>
+
+          <a data-tab="organization" class="nav-link">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            <span>Organisational Lab</span>
+          </a>
+
+          <a data-tab="marketing" class="nav-link">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            <span>Marketing & Competition</span>
+          </a>
+
+          <a data-tab="finance" class="nav-link">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>Financial Leverage Hub</span>
+          </a>
+
+          <a data-tab="operations" class="nav-link">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+            <span>Operations & Supply Chain</span>
+          </a>
+
+          <a data-tab="recommendations" class="nav-link">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>Strategic Recommendations</span>
+          </a>
+
+          <a data-tab="report" class="nav-link">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            <span>Report Knowledge Base</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Report Metadata Footer -->
+      <div class="mt-8 pt-4 border-t border-slate-800 text-[11px] font-mono text-slate-400 space-y-1">
+        <p class="text-slate-300 font-semibold">Univ. of Portsmouth Report</p>
+        <p>Business In Action</p>
+        <p class="text-cyan-400">Dr. Gajendra Liyanaarachchi</p>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 p-6 lg:p-10 flex flex-col justify-between overflow-x-hidden">
+      <div>
+        <!-- Top Control Bar -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+          <!-- Global Search -->
+          <div class="relative w-full sm:w-80">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <input type="text" id="global-search" placeholder="Search report metrics, terms (Press Enter)..." class="w-full bg-[#131c31] border border-slate-800 text-xs text-slate-200 pl-9 pr-4 py-2 rounded-xl focus:border-cyan-500 focus:outline-none font-mono">
+          </div>
+
+          <!-- Quick Actions / Live Indicators -->
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-xs font-mono font-semibold">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Live Strategy Model v2.6
+            </span>
+          </div>
+        </div>
+
+        <!-- Top Metric KPI Bar -->
+        <div id="top-kpi-bar" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
+          <!-- Rendered dynamically by AppController -->
+        </div>
+
+        <!-- Dynamic Module Container -->
+        <div id="module-container">
+          <!-- Module JS views render here -->
+        </div>
+      </div>
+
+      <!-- App Footer -->
+      <footer class="mt-12 pt-6 border-t border-slate-800 text-center text-xs font-mono text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <span>BAE Systems Inc. Strategic Decision Support System</span>
+        <span>Based on Portsmouth University Report · Dr. Gajendra Liyanaarachchi</span>
+      </footer>
+    </main>
+
+  </div>
+
+  <!-- Main JavaScript App Entry -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
